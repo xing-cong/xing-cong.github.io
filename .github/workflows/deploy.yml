@@ -4,7 +4,7 @@ on:
   # Build and deploy when updates land on the website branches.
   push:
     branches:
-      - main
+      - master
       - ci
   workflow_dispatch:
 
