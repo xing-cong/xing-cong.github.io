@@ -1,5 +1,5 @@
-I am a PhD student at the School of Science, University of Example, advised by [Prof. Advisor One](https://example.com) and [Dr. Advisor Two](https://example.com).
+I am a PhD student in Computer Science and Technology at Beihang University, affiliated with the Sino-German Joint Software Institute.
 
-Prior to this, I obtained a BSc degree with First Class Honours in Natural Science from the University of Example.
+My research focuses on high-performance computing, GPU sparse computation, AI infrastructure, and Transformer inference acceleration. I am especially interested in turning sparsity, memory locality, and hardware features into practical acceleration for modern AI workloads.
 
-My current research focuses on investigating the mathematical principles of natural philosophy.
+Before my PhD study, I received my B.S. in Computer Science and Technology from Northeastern University and continued graduate study at Beihang University.

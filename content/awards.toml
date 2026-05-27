@@ -1,27 +1,27 @@
 type = "card"
 title = "Awards"
-description = "Honors and awards I have received."
+description = "Selected honors received during my graduate study."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2025"
-content = "Description of the award."
+title = "Outstanding Graduate Student"
+subtitle = "Beihang University"
+date = "Graduate study"
+content = "University-level recognition for academic performance and research engagement."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2024"
-content = "Description of the award."
+title = "University Merit Student"
+subtitle = "Beihang University"
+date = "Graduate study"
+content = "University-level merit student honor."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2023"
-content = "Description of the award."
+title = "First-Class Scholarship"
+subtitle = "Beihang University"
+date = "Graduate study"
+content = "Awarded for strong academic performance. Current GPA: 3.82/4.0, ranked 4/146."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2022"
-content = "Description of the award."
+title = "No.9 Scholarship"
+subtitle = "Beihang University"
+date = "Graduate study"
+content = "Scholarship awarded during graduate study."

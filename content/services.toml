@@ -1,9 +1,15 @@
 type = "card"
 title = "Services"
-description = "Professional services and community involvement."
+description = "Academic service and community responsibilities."
 
 [[items]]
 title = "Reviewer"
-subtitle = "Journal Name"
-date = "2024"
-content = "Reviewed papers for..."
+subtitle = "ACM Transactions on Architecture and Code Optimization (TACO)"
+date = "Current"
+content = "Serve as a reviewer for TACO."
+
+[[items]]
+title = "Party Branch Secretary"
+subtitle = "Beihang University"
+date = "Current"
+content = "Serve as the party branch secretary during graduate study."

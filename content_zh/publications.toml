@@ -1,4 +1,4 @@
 type = "publication"
 title = "论文"
-description = "我的研究成果列表。"
+description = "围绕 GPU 稀疏计算、AI Infra 与高性能推理加速的研究成果。"
 source = "publications.bib"

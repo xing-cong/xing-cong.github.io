@@ -1,0 +1,43 @@
+@inproceedings{cong2026rtlynx,
+  selected={true},
+  first_author = {true},
+  status = {accepted},
+  published_date = {2026-05},
+  title = {RT-Lynx: Putting the GEMM Sparsity In a Right Way for Diffusion Models},
+  author = {丛兴},
+  year = {2026},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  url = {https://arxiv.org/abs/2605.26632},
+  abstract = {RT-Lynx 是面向 diffusion transformer 的半结构化激活稀疏框架。该工作系统研究 DiT 推理中激活侧 2:4 N:M 稀疏相比权重侧稀疏更适合释放 Sparse Tensor Core 加速潜力的原因，并提出范数补偿、轻量级 LoRA 误差恢复等策略以保持生成质量。同时，RT-Lynx 构建在线融合稀疏推理流水线，将激活筛选、格式压缩与稀疏 GEMM 融合到 CUDA 执行路径中，降低动态稀疏开销。},
+  description = {第一作者工作。面向 DiT 设计半结构化激活稀疏框架 RT-Lynx，系统验证激活侧相比权重侧更适合 2:4 N:M 稀疏，并结合范数补偿、轻量级 LoRA 误差恢复与在线融合稀疏推理流水线释放 Sparse Tensor Core 加速潜力。},
+  keywords = {Diffusion Models, Sparse GEMM, GPU Acceleration, AI Infrastructure}
+}
+
+@inproceedings{cong2025cbspmv,
+  selected={true},
+  first_author = {true},
+  status = {published},
+  published_date = {2025},
+  title = {CB-SpMV: A Data Aggregating and Balance Algorithm for Cache-Friendly Block-Based SpMV on GPUs},
+  author = {丛兴},
+  year = {2025},
+  booktitle = {International Conference on Supercomputing (ICS)},
+  url = {https://arxiv.org/abs/2605.18515},
+  abstract = {CB-SpMV 是面向 GPU SpMV 的缓存友好块稀疏框架。该工作针对访存跳跃、线程空转与负载不均问题，通过块内数据聚合、虚拟指针、列聚合与自适应子块格式选择统一优化数据局部性和硬件利用率。在数千个矩阵上的大规模评测表明，CB-SpMV 在 NVIDIA A100 与 RTX 4090 上优于 cuSPARSE、TileSpMV 和 DASP，并显著提升缓存局部性。},
+  description = {第一作者工作。针对 GPU SpMV 中访存跳跃、线程空转与负载不均问题，提出缓存友好的块稀疏框架 CB-SpMV，通过块内数据聚合、虚拟指针、列聚合与自适应子块格式选择统一优化数据局部性和硬件利用率。},
+  keywords = {SpMV, Sparse Matrix, GPU, Cache Locality}
+}
+
+@inproceedings{cong2026tcspgemm,
+  selected={true},
+  first_author = {false},
+  status = {accepted},
+  published_date = {2026},
+  title = {TC-SpGEMM: High Performance Sparse General Matrix Multiplication with Tensor Core-Accelerated},
+  author = {丛兴},
+  year = {2026},
+  booktitle = {IEEE International Parallel and Distributed Processing Symposium (IPDPS)},
+  abstract = {TC-SpGEMM 研究利用 Tensor Core 加速的高性能稀疏通用矩阵乘法。该工作面向稀疏矩阵乘法负载与 Tensor Core 高效执行之间的适配问题，探索 Tensor Core 感知的稀疏矩阵乘法策略，以提升现代 GPU 上稀疏计算效率。},
+  description = {IPDPS 2026 已中工作，丛兴为第二作者。该工作研究利用 Tensor Core 加速的高性能稀疏通用矩阵乘法。},
+  keywords = {SpGEMM, Tensor Core, Sparse Matrix Multiplication, GPU}
+}

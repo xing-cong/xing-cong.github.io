@@ -40,7 +40,16 @@ export interface LocaleMessages {
     noResults: string;
     abstract: string;
     bibtex: string;
+    paper: string;
     code: string;
+    status: {
+      published: string;
+      accepted: string;
+      underReview: string;
+      submitted: string;
+      inPreparation: string;
+      draft: string;
+    };
   };
   footer: {
     lastUpdated: string;
@@ -89,7 +98,16 @@ const en: LocaleMessages = {
     noResults: 'No publications found matching your criteria.',
     abstract: 'Abstract',
     bibtex: 'BibTeX',
+    paper: 'Paper',
     code: 'Code',
+    status: {
+      published: 'Published',
+      accepted: 'Accepted',
+      underReview: 'Under review',
+      submitted: 'Submitted',
+      inPreparation: 'In preparation',
+      draft: 'Draft',
+    },
   },
   footer: {
     lastUpdated: 'Last updated',
@@ -138,7 +156,16 @@ const zh: LocaleMessages = {
     noResults: '没有找到符合条件的论文。',
     abstract: '摘要',
     bibtex: 'BibTeX',
+    paper: '论文',
     code: '代码',
+    status: {
+      published: '已发表',
+      accepted: '已接收',
+      underReview: '在审',
+      submitted: '已投稿',
+      inPreparation: '准备中',
+      draft: '草稿',
+    },
   },
   footer: {
     lastUpdated: '最近更新',

@@ -3,9 +3,11 @@ title = "About"
 
 [profile]
 research_interests = [
-  "Computational Physics",
-  "Mathematical Principles",
-  "Proof of Theorems"
+  "High-Performance Computing",
+  "GPU Kernel Optimization",
+  "Sparse Computing",
+  "AI Infrastructure",
+  "Transformer Inference Acceleration"
 ]
 
 [[sections]]
@@ -26,4 +28,3 @@ id = "news"
 type = "list"
 title = "News"
 source = "news.toml"
-

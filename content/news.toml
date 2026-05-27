@@ -1,7 +1,15 @@
 [[news]]
-date = "2025-11"
-content = "Our work has been accepted by a prestigious journal 🎉"
+date = "2026-05"
+content = "RT-Lynx was accepted to ICML 2026."
+
+[[news]]
+date = "2026-05"
+content = "CB-SpMV is available on arXiv."
 
 [[news]]
 date = "2025-09"
-content = "Starting my PhD at the University of Example"
+content = "Started an AI research internship at Alibaba's Technical Platform."
+
+[[news]]
+date = "2024-06"
+content = "Started the direct PhD track in Computer Science and Technology at Beihang University."

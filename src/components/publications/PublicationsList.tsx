@@ -17,6 +17,24 @@ import { cn } from '@/lib/utils';
 import { useMessages } from '@/lib/i18n/useMessages';
 import FormattedBibTeXText from './FormattedBibTeXText';
 
+function getStatusLabel(messages: ReturnType<typeof useMessages>, status: Publication['status']): string {
+    switch (status) {
+        case 'accepted':
+            return messages.publications.status.accepted;
+        case 'under-review':
+            return messages.publications.status.underReview;
+        case 'submitted':
+            return messages.publications.status.submitted;
+        case 'in-preparation':
+            return messages.publications.status.inPreparation;
+        case 'draft':
+            return messages.publications.status.draft;
+        case 'published':
+        default:
+            return messages.publications.status.published;
+    }
+}
+
 interface PublicationsListProps {
     config: PublicationPageConfig;
     publications: Publication[];
@@ -232,6 +250,10 @@ export default function PublicationsList({ config, publications, embedded = fals
                                     </p>
                                     <p className="text-sm font-medium text-neutral-800 dark:text-neutral-600 mb-3">
                                         {pub.journal || pub.conference} {pub.year}
+                                        {pub.publishedDate && (
+                                            <> · {pub.publishedDate}</>
+                                        )}
+                                        <> · {getStatusLabel(messages, pub.status)}</>
                                     </p>
 
                                     {pub.description && (
@@ -249,6 +271,16 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                 className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
                                             >
                                                 DOI
+                                            </a>
+                                        )}
+                                        {pub.url && (
+                                            <a
+                                                href={pub.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
+                                            >
+                                                {messages.publications.paper}
                                             </a>
                                         )}
                                         {pub.code && (

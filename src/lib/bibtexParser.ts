@@ -1,4 +1,4 @@
-import { Publication, PublicationType, ResearchArea } from '@/types/publication';
+import { Publication, PublicationStatus, PublicationType, ResearchArea } from '@/types/publication';
 import { getConfig } from './config';
 import { getRuntimeI18nConfig } from './i18n/config';
 import { parseBibTeXInline } from './bibtexInline';
@@ -36,6 +36,26 @@ const monthMapping: Record<string, number> = {
   dec: 12, december: 12,
 };
 
+const statusMapping: Record<string, PublicationStatus> = {
+  published: 'published',
+  accepted: 'accepted',
+  'under-review': 'under-review',
+  underreview: 'under-review',
+  submitted: 'submitted',
+  'in-preparation': 'in-preparation',
+  inpreparation: 'in-preparation',
+  draft: 'draft',
+};
+
+const statusPriority: Record<PublicationStatus, number> = {
+  published: 0,
+  accepted: 0,
+  'under-review': 1,
+  submitted: 2,
+  'in-preparation': 3,
+  draft: 4,
+};
+
 export function parseBibTeX(bibtexContent: string, locale?: string): Publication[] {
   const highlightNames = getHighlightNames(locale);
   const entries = bibtexParse.toJSON(bibtexContent);
@@ -59,6 +79,9 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
 
     // Parse selected field (convert string to boolean)
     const selected = tags.selected === 'true' || tags.selected === 'yes';
+    const firstAuthor = tags.first_author === 'true' || tags.first_author === 'yes';
+    const status = parsePublicationStatus(tags.status);
+    const publishedDate = cleanBibTeXString(tags.published_date);
 
     // Parse preview field (remove braces if present)
     const preview = tags.preview?.replace(/[{}]/g, '');
@@ -73,10 +96,11 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
       year,
       month: monthMapping[tags.month?.toLowerCase()] ? String(month) : tags.month,
       type,
-      status: 'published',
+      status,
       tags: keywords,
       keywords,
       researchArea: detectResearchArea(tags.title, keywords),
+      publishedDate: publishedDate || undefined,
 
       // Optional fields
       journal: cleanBibTeXString(tags.journal),
@@ -90,10 +114,11 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
       abstract: cleanBibTeXString(tags.abstract),
       description: cleanBibTeXString(tags.description || tags.note),
       selected,
+      firstAuthor,
       preview,
 
       // Store original BibTeX (excluding custom fields)
-      bibtex: reconstructBibTeX(entry, ['selected', 'preview', 'description', 'keywords', 'code']),
+      bibtex: reconstructBibTeX(entry, ['selected', 'preview', 'description', 'keywords', 'code', 'first_author', 'published_date', 'status']),
     };
 
     // Clean up undefined fields
@@ -105,20 +130,39 @@ export function parseBibTeX(bibtexContent: string, locale?: string): Publication
 
     return publication;
   }).sort((a: Publication, b: Publication) => {
-    // Sort by year (descending), then by month if available
-    if (b.year !== a.year) return b.year - a.year;
+    if (Boolean(b.firstAuthor) !== Boolean(a.firstAuthor)) {
+      return Number(Boolean(b.firstAuthor)) - Number(Boolean(a.firstAuthor));
+    }
 
-    // For month comparison, treat missing months as January (1) to ensure they appear last within the year
-    const monthA = typeof a.month === 'string' ?
-      (monthMapping[a.month.toLowerCase()] || parseInt(a.month) || 1) :
-      (a.month || 1);
-    const monthB = typeof b.month === 'string' ?
-      (monthMapping[b.month.toLowerCase()] || parseInt(b.month) || 1) :
-      (b.month || 1);
+    const statusDiff = statusPriority[a.status] - statusPriority[b.status];
+    if (statusDiff !== 0) return statusDiff;
 
-    // Sort by month descending (December to January)
-    return monthB - monthA;
+    return getPublishedDateSortValue(b) - getPublishedDateSortValue(a);
   });
+}
+
+function parsePublicationStatus(status?: string): PublicationStatus {
+  const normalized = (status || '').trim().toLowerCase().replace(/_/g, '-');
+  return statusMapping[normalized] || 'published';
+}
+
+function getPublishedDateSortValue(publication: Publication): number {
+  const date = publication.publishedDate?.trim();
+
+  if (date) {
+    const match = date.match(/^(\d{4})(?:-(\d{1,2}))?/);
+    if (match) {
+      const year = Number(match[1]);
+      const month = match[2] ? Number(match[2]) : 1;
+      return year * 100 + month;
+    }
+  }
+
+  const fallbackMonth = typeof publication.month === 'string'
+    ? (monthMapping[publication.month.toLowerCase()] || parseInt(publication.month) || 1)
+    : (publication.month || 1);
+
+  return publication.year * 100 + fallbackMonth;
 }
 
 function getHighlightNames(locale?: string): string[] {
