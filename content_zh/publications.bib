@@ -1,3 +1,17 @@
+@inproceedings{cong2026dbspmspv,
+  selected = {true},
+  first_author = {true},
+  status = {accepted},
+  published_date = {2026-07},
+  title = {DB-SpMSpV: Dual-View Blocked Sparse Matrix-Sparse Vector Multiplication for Dynamic GPU Workloads},
+  author = {丛兴},
+  year = {2026},
+  booktitle = {International Conference on Parallel Processing (ICPP)},
+  abstract = {稀疏矩阵-稀疏向量乘法（SpMSpV）是图遍历、稀疏线性代数和稀疏模型推理中的核心计算原语。其输入向量通常呈动态稀疏特征，因此最优的 GPU 执行路径既取决于全局稀疏度，也取决于局部向量块的分布。现有 GPU SpMSpV 方法往往将存储布局、推/拉式遍历与计算核紧密绑定，若不引入额外存储或调度开销，便难以实现细粒度自适应。本文提出 DB-SpMSpV，一种面向动态 GPU 工作负载的双视图分块 SpMSpV 框架。DB-SpMSpV 将矩阵划分为固定大小的二维块，在高层维护块级 CSR/CSC 双视图，并复用单一底层块数据，同时支持行驱动的拉式计算与列驱动的推式计算。运行时，框架根据输入的块级稀疏度选择全局遍历路径，根据局部矩阵块与向量块结构选择块级微内核，并利用负载均衡、异步预取和分层写回，减少不规则内存访问、写回冲突与负载不均。我们进一步将该框架集成到 DB-BFS 和 DB-Decoding 中。我们在 NVIDIA A100 和 RTX 4090 上，使用 SuiteSparse 矩阵、对称图以及三个开源大语言模型评估 DB-SpMSpV。在不同输入稀疏度下，DB-SpMSpV 在 A100 上相较 cuSPARSE 获得平均 5.48×–64.34× 的加速，相较 TileSpMSpV 获得平均 2.36×–14.01× 的加速，并在 RTX 4090 上取得相近收益。DB-BFS 将端到端图遍历性能进一步提升：在 A100 上相较 TileBFS 平均加速 2.66×，在 RTX 4090 上平均加速 3.60×；DB-Decoding 则将单 token 线性层加速最高提升至 4.50×。},
+  description = {第一作者工作。提出面向动态 GPU 工作负载的双视图分块 SpMSpV 框架 DB-SpMSpV，在复用单一底层块数据的同时，根据输入稀疏特征自适应选择全局推/拉式遍历与局部块级微内核，并将框架扩展至图遍历和稀疏大模型解码。},
+  keywords = {SpMSpV, Sparse Matrix, GPU, Graph Traversal, LLM Inference}
+}
+
 @inproceedings{cong2026rtlynx,
   selected={true},
   first_author = {true},

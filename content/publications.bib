@@ -1,3 +1,17 @@
+@inproceedings{cong2026dbspmspv,
+  selected = {true},
+  first_author = {true},
+  status = {accepted},
+  published_date = {2026-07},
+  title = {DB-SpMSpV: Dual-View Blocked Sparse Matrix-Sparse Vector Multiplication for Dynamic GPU Workloads},
+  author = {Xing Cong},
+  year = {2026},
+  booktitle = {International Conference on Parallel Processing (ICPP)},
+  abstract = {Sparse Matrix-Sparse Vector Multiplication (SpMSpV) is a core primitive in graph traversal, sparse linear algebra, and sparse model inference. Its input vector is often dynamically sparse, so the best GPU execution path depends on both global sparsity and the local vector-block distribution. Existing GPU SpMSpV methods often bind storage layouts, push/pull traversal, and kernels together, making fine-grained adaptation difficult without extra storage or scheduling overhead. This paper presents DB-SpMSpV, a dual-view blocked SpMSpV framework for dynamic GPU workloads. DB-SpMSpV partitions the matrix into fixed-size 2D blocks, maintains block-level CSR/CSC views at the high level, and reuses a single low-level block payload to support both row-driven pull and column-driven push. At runtime, it selects the global traversal path based on input block sparsity, chooses block microkernels from the local matrix/vector block structure, and uses load balancing, asynchronous prefetching, and hierarchical writeback to reduce irregular memory accesses, writeback conflicts, and load imbalance. We further integrate the framework into DB-BFS and DB-Decoding. We evaluate DB-SpMSpV on NVIDIA A100 and RTX 4090 using SuiteSparse matrices, symmetric graphs, and three open-source LLMs. Across input sparsities, DB-SpMSpV achieves average speedups of 5.48×–64.34× over cuSPARSE and 2.36×–14.01× over TileSpMSpV on A100, with similar gains on RTX 4090. DB-BFS further improves end-to-end graph traversal by 2.66× over TileBFS on A100 and 3.60× on RTX 4090 on average, while DB-Decoding accelerates single-token linear layers by up to 4.50×.},
+  description = {First-author work on a dual-view blocked SpMSpV framework for dynamic GPU workloads. DB-SpMSpV adapts global push/pull traversal and local block microkernels to input sparsity while reusing a single low-level block payload, and extends the framework to graph traversal and sparse LLM decoding.},
+  keywords = {SpMSpV, Sparse Matrix, GPU, Graph Traversal, LLM Inference}
+}
+
 @inproceedings{cong2026rtlynx,
   selected={true},
   first_author = {true},
