@@ -13,6 +13,11 @@ Direct master-doctor track.
 
 ## Publications
 
+**DB-SpMSpV: Dual-View Blocked Sparse Matrix-Sparse Vector Multiplication for Dynamic GPU Workloads**  
+First author, ICPP 2026 (CCF-B), accepted in July 2026.
+- Proposed a dual-view blocked SpMSpV framework that reuses a single low-level block payload for adaptive row-driven pull and column-driven push, with runtime selection of global traversal paths and local block microkernels.
+- Achieved average speedups of 5.48x-64.34x over cuSPARSE and 2.36x-14.01x over TileSpMSpV on NVIDIA A100; DB-BFS achieved average speedups of 2.66x on A100 and 3.60x on RTX 4090 over TileBFS, while DB-Decoding accelerated single-token linear layers by up to 4.50x.
+
 **RT-Lynx: Putting the GEMM Sparsity In a Right Way for Diffusion Models**  
 First author, ICML 2026 (CCF-A), [Paper](https://arxiv.org/abs/2605.26632)
 - Designed a semi-structured activation sparsity framework for DiT models, with norm compensation, lightweight LoRA error recovery, and online fused sparse inference.

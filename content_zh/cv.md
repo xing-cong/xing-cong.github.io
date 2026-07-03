@@ -12,6 +12,11 @@
 
 ## 学术成果
 
+**DB-SpMSpV: Dual-View Blocked Sparse Matrix-Sparse Vector Multiplication for Dynamic GPU Workloads**  
+第一作者，ICPP 2026 (CCF-B)，2026 年 7 月录用。
+- 提出面向动态 GPU 工作负载的双视图分块 SpMSpV 框架，复用单一底层块数据以支持自适应的行驱动拉式与列驱动推式计算，并在运行时选择全局遍历路径和局部块级微内核。
+- 在 NVIDIA A100 上相较 cuSPARSE 和 TileSpMSpV 分别取得 5.48x-64.34x 和 2.36x-14.01x 的平均加速；DB-BFS 相较 TileBFS 在 A100 和 RTX 4090 上分别平均加速 2.66x 和 3.60x，DB-Decoding 将单 token 线性层最高加速 4.50x。
+
 **RT-Lynx: Putting the GEMM Sparsity In a Right Way for Diffusion Models**  
 第一作者，ICML 2026 (CCF-A)，[Paper](https://arxiv.org/abs/2605.26632)
 - 主导设计面向 DiT 的半结构化激活稀疏框架 RT-Lynx，首次系统验证激活侧相比权重侧更适合 2:4 N:M 稀疏；提出范数补偿、轻量级 LoRA 误差恢复等策略，在保持生成质量的同时释放 Sparse Tensor Core 加速潜力。
