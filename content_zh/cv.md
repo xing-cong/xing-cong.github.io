@@ -12,23 +12,27 @@
 
 ## 学术成果
 
+**CB-Sparse: A Cache-Friendly Data Aggregating Algorithm for Block-Based Sparse Matrix Multiplication on GPUs**  
+第一作者，ACM TACO (CCF-A)，2026 年 9 月接收，10 月 1 日上线 Just Accepted 版本；正式卷期页码尚未分配。[DOI: 10.1145/3848124](https://doi.org/10.1145/3848124)
+- 通过二维分块结构与虚拟指针聚合数据，统一优化 GPU 上的 SpMV、SpMM 和 SpGEMM，并设计面向各类乘法的数据复用、负载均衡、累加写回及符号阶段优化。
+
 **DB-SpMSpV: Dual-View Blocked Sparse Matrix-Sparse Vector Multiplication for Dynamic GPU Workloads**  
-第一作者，ICPP 2026 (CCF-B)，2026 年 7 月录用。
+第一作者，ICPP 2026 (CCF-B)，已发表，617–627 页。[DOI: 10.1145/3832810.3832821](https://doi.org/10.1145/3832810.3832821)
 - 提出面向动态 GPU 工作负载的双视图分块 SpMSpV 框架，复用单一底层块数据以支持自适应的行驱动拉式与列驱动推式计算，并在运行时选择全局遍历路径和局部块级微内核。
 - 在 NVIDIA A100 上相较 cuSPARSE 和 TileSpMSpV 分别取得 5.48x-64.34x 和 2.36x-14.01x 的平均加速；DB-BFS 相较 TileBFS 在 A100 和 RTX 4090 上分别平均加速 2.66x 和 3.60x，DB-Decoding 将单 token 线性层最高加速 4.50x。
 
-**RT-Lynx: Putting the GEMM Sparsity In a Right Way for Diffusion Models**  
-第一作者，ICML 2026 (CCF-A)，[Paper](https://arxiv.org/abs/2605.26632)
+**RT-Lynx: Putting GEMM Sparsity in the Right Place for Diffusion Models**  
+第一作者，ICML 2026 (CCF-A)，已发表，PMLR 306，21293–21322 页。[Paper](https://proceedings.mlr.press/v306/cong26a.html)
 - 主导设计面向 DiT 的半结构化激活稀疏框架 RT-Lynx，首次系统验证激活侧相比权重侧更适合 2:4 N:M 稀疏；提出范数补偿、轻量级 LoRA 误差恢复等策略，在保持生成质量的同时释放 Sparse Tensor Core 加速潜力。
 - 开发在线融合稀疏推理流水线，将激活筛选、格式压缩与 GEMM 融合到 CUDA 执行路径中；在 Qwen-Image 等模型上实现最高 1.88x Sparse GEMM 加速、1.55x 线性层平均加速和约 1.2x 端到端加速。
 
 **CB-SpMV: A Data Aggregating and Balance Algorithm for Cache-Friendly Block-Based SpMV on GPUs**  
-第一作者，ICS 2025 (CCF-B)，[Paper](https://arxiv.org/abs/2605.18515)
+第一作者，ICS 2025 (CCF-B)，[DOI: 10.1145/3721145.3725746](https://doi.org/10.1145/3721145.3725746)
 - 针对 GPU SpMV 中访存跳跃、线程空转与负载不均问题，提出缓存友好的块稀疏框架 CB-SpMV；通过块内数据聚合、虚拟指针、列聚合与自适应子块格式选择统一优化数据局部性和硬件利用率。
 - 在数千个矩阵上完成大规模评测，在 NVIDIA A100 与 RTX 4090 上优于 cuSPARSE、TileSpMV 和 DASP；相较 TileSpMV 最高取得 3.95x 平均加速，并提升 L1/L2 Cache 命中率 82%/19%。
 
-**TC-SpGEMM: High Performance Sparse General Matrix Multiplication with Tensor Core-Accelerated**  
-第二作者，IPDPS 2026 (CCF-B)，已中。
+**TC_SpGEMM: High Performance Sparse General Matrix Multiplication with Tensor Core-Accelerated**  
+第二作者，IPDPS 2026 (CCF-B)，已发表，1–14 页。[DOI: 10.1109/IPDPS65963.2026.00014](https://doi.org/10.1109/IPDPS65963.2026.00014)
 
 ## 实习经历
 

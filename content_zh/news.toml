@@ -1,4 +1,20 @@
 [[news]]
+date = "2026-10"
+content = "CB-Sparse 的 TACO Just Accepted 版本已上线，DOI：10.1145/3848124。"
+
+[[news]]
+date = "2026-09"
+content = "DB-SpMSpV 已发表于 ICPP 2026，DOI：10.1145/3832810.3832821。"
+
+[[news]]
+date = "2026-09"
+content = "CB-Sparse 获 ACM Transactions on Architecture and Code Optimization (TACO) 接收。"
+
+[[news]]
+date = "2026-07"
+content = "RT-Lynx 已发表于 ICML 2026 论文集（PMLR 306，21293–21322 页）。"
+
+[[news]]
 date = "2026-05"
 content = "RT-Lynx 被 ICML 2026 接收。"
 
