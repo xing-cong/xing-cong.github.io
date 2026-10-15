@@ -1,4 +1,20 @@
 [[news]]
+date = "2026-10"
+content = "The TACO Just Accepted version of CB-Sparse is online (DOI: 10.1145/3848124)."
+
+[[news]]
+date = "2026-09"
+content = "DB-SpMSpV was published at ICPP 2026 (DOI: 10.1145/3832810.3832821)."
+
+[[news]]
+date = "2026-09"
+content = "CB-Sparse was accepted by ACM Transactions on Architecture and Code Optimization (TACO)."
+
+[[news]]
+date = "2026-07"
+content = "RT-Lynx was published in the ICML 2026 proceedings (PMLR 306, pp. 21293–21322)."
+
+[[news]]
 date = "2026-05"
 content = "RT-Lynx was accepted to ICML 2026."
 

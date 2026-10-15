@@ -13,23 +13,27 @@ Direct master-doctor track.
 
 ## Publications
 
+**CB-Sparse: A Cache-Friendly Data Aggregating Algorithm for Block-Based Sparse Matrix Multiplication on GPUs**  
+First author, ACM TACO (CCF-A), accepted in September 2026; Just Accepted version online October 1, 2026. Final volume, issue, and pages have not yet been assigned. [DOI: 10.1145/3848124](https://doi.org/10.1145/3848124)
+- Unified cache-friendly GPU optimizations for SpMV, SpMM, and SpGEMM using a 2D blocked structure and virtual pointers, with operation-specific data reuse, load balancing, accumulation and writeback, and symbolic-stage optimizations.
+
 **DB-SpMSpV: Dual-View Blocked Sparse Matrix-Sparse Vector Multiplication for Dynamic GPU Workloads**  
-First author, ICPP 2026 (CCF-B), accepted in July 2026.
+First author, ICPP 2026 (CCF-B), published, pp. 617–627. [DOI: 10.1145/3832810.3832821](https://doi.org/10.1145/3832810.3832821)
 - Proposed a dual-view blocked SpMSpV framework that reuses a single low-level block payload for adaptive row-driven pull and column-driven push, with runtime selection of global traversal paths and local block microkernels.
 - Achieved average speedups of 5.48x-64.34x over cuSPARSE and 2.36x-14.01x over TileSpMSpV on NVIDIA A100; DB-BFS achieved average speedups of 2.66x on A100 and 3.60x on RTX 4090 over TileBFS, while DB-Decoding accelerated single-token linear layers by up to 4.50x.
 
-**RT-Lynx: Putting the GEMM Sparsity In a Right Way for Diffusion Models**  
-First author, ICML 2026 (CCF-A), [Paper](https://arxiv.org/abs/2605.26632)
+**RT-Lynx: Putting GEMM Sparsity in the Right Place for Diffusion Models**  
+First author, ICML 2026 (CCF-A), published, PMLR 306, pp. 21293–21322. [Paper](https://proceedings.mlr.press/v306/cong26a.html)
 - Designed a semi-structured activation sparsity framework for DiT models, with norm compensation, lightweight LoRA error recovery, and online fused sparse inference.
 - Achieved up to 1.88x Sparse GEMM speedup, 1.55x average linear-layer speedup, and about 1.2x end-to-end speedup on models such as Qwen-Image.
 
 **CB-SpMV: A Data Aggregating and Balance Algorithm for Cache-Friendly Block-Based SpMV on GPUs**  
-First author, ICS 2025 (CCF-B), [Paper](https://arxiv.org/abs/2605.18515)
+First author, ICS 2025 (CCF-B), [DOI: 10.1145/3721145.3725746](https://doi.org/10.1145/3721145.3725746)
 - Proposed a cache-friendly block sparse framework for GPU SpMV to address irregular memory access, thread idling, and load imbalance.
 - Evaluated on thousands of matrices on NVIDIA A100 and RTX 4090, outperforming cuSPARSE, TileSpMV, and DASP; achieved up to 3.95x average speedup over TileSpMV and improved L1/L2 cache hit rates by 82%/19%.
 
-**TC-SpGEMM: High Performance Sparse General Matrix Multiplication with Tensor Core-Accelerated**  
-Second author, IPDPS 2026 (CCF-B), accepted.
+**TC_SpGEMM: High Performance Sparse General Matrix Multiplication with Tensor Core-Accelerated**  
+Second author, IPDPS 2026 (CCF-B), published, pp. 1–14. [DOI: 10.1109/IPDPS65963.2026.00014](https://doi.org/10.1109/IPDPS65963.2026.00014)
 
 ## Internships
 
